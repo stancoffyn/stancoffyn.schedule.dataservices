@@ -5,7 +5,8 @@ import { BaseController } from './baseController'
 import { Route } from "../models/Route";
 
 export class UserController implements BaseController {
-    repo: Repository<User>;
+    repo : Repository<User> = getManager().getRepository(User);
+    
     getRoutes() : Route[] {
         return [
             new Route('/user/', 'get', this.getAllUsers, this.setRepo),
