@@ -26,6 +26,10 @@ createConnection().then(async connection => {
         });
     });
 
+    app.get('/', function(req: Request, res: Response){
+        res.send(`Server running for port ${process.env.APPPORT}`);
+    })
+
     //console.log(process.env);
     app.listen(process.env.APPPORT || 5001, () => 
         console.log(`Server running on port ${process.env.APPPORT}`)
