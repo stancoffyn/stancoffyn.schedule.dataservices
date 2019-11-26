@@ -31,7 +31,7 @@ createConnection().then(async connection => {
     })
 
     //console.log(process.env);
-    app.listen(process.env.APPPORT || 5001, () => 
+    app.listen(process.env.PORT || 8088, () => 
         console.log(`Server running on port ${process.env.APPPORT}`)
     );
 }).catch(error => console.log(error));
